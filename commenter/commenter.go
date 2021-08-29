@@ -113,6 +113,9 @@ func (c *Commenter) writeCommentIfRequired(prComment *github.PullRequestComment)
 			}
 			return nil
 		}(existing)
+		if commentId != nil {
+			break
+		}
 	}
 
 	if err := c.ghConnector.writeReviewComment(prComment, commentId); err != nil {
