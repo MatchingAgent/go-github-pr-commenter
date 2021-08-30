@@ -31,15 +31,15 @@ type PRReviewComment struct {
 }
 
 var (
-	patchRegex     = regexp.MustCompile(`^@@.*\+(\d+),(\d+).+?@@`)
-	commitRefRegex = regexp.MustCompile(".+ref=(.+)")
+	patchRegex         = regexp.MustCompile(`^@@.*\+(\d+),(\d+).+?@@`)
+	commitRefRegex     = regexp.MustCompile(".+ref=(.+)")
+	ApproveBody        = "Approve:tada:"
+	RequestChangesBody = "Request changes:rotating_light:"
 )
 
 const (
-	Approve            = "APPROVE"
-	RequestChanges     = "REQUEST_CHANGES"
-	ApproveBody        = "Approve:tada:"
-	RequestChangesBody = "Request changes:rotating_light:"
+	Approve        = "APPROVE"
+	RequestChanges = "REQUEST_CHANGES"
 )
 
 // NewCommenter creates a Commenter for updating PR with comments
